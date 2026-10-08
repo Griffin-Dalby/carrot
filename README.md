@@ -35,4 +35,4 @@ All syntax and comparison ideology is derived from NPM semver syntax. Specifics 
 
 ## License
 
-This framework (carrot) is licensed under [MIT-0](https://spdx.org/licenses/MIT-0.html), meaning you can implement this into your project in any way that you see fit. Of course attribution would be nice, however it isn't required to use this.
+This framework (carrot) is licensed under [MIT](https://opensource.org/license/mit), meaning you can implement this into your project in any way that you see fit, but attributions to me within any files must be kept.

@@ -1,0 +1,11 @@
+gitSourceBranch = "main"
+changelog = true
+classOrder = []
+
+[docusaurus]
+onBrokenLinks = "throw"
+onBrokenMarkdownLinks = "warn"
+
+[footer]
+style = "dark"
+copyright = "Copyright © 2026 Griffin Dalby. Built with Moonwave and Docusaurus"

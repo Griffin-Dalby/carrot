@@ -6,6 +6,10 @@
 /*.rbxl.lock
 
 # Wally
-Build/
+WallyBuild/
 Packages/
 DevPackages/
+
+# Moonwave
+node_modules/
+build/

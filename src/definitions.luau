@@ -49,6 +49,35 @@ export type CarrotCore = {
 
 --#endregion
 
+--[[ API ]]--
+--#region
+
+--[ Version ]--
+--#region
+
+export type VersionApi = {
+
+    --[[
+        Deconstructs a semver string into a Version object
+
+        @param version Raw semver string
+        @return Version object
+    ]]
+    FromString: (version: string) -> Version,
+
+    --[[
+        Converts a Version object back into a semver string
+
+        @param version Version object
+    ]]
+    ToString: (version: Version) -> string
+
+}
+
+--#endregion
+
+--#endregion
+
 --[[ PRIMITIVES ]]--
 --#region
 

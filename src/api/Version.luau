@@ -65,23 +65,23 @@ local Version = {} :: VersionApi
 --[ Constructors ]--
 --#region
 
+--[ String Constructors ]--
+--#region
+
 function Version.FromString(version)
-    local wildcard = version:sub(1,1)
-    local wildcardPresent = wildcard=="~" or wildcard=="^"
-    if wildcardPresent then version = version:sub(2); end
-
-    local major, minor, patch = table.unpack(version:split("."))
-    major = major and tonumber(major) or nil
-    minor = minor and tonumber(minor) or 0
-    patch = patch and tonumber(patch) or 0
-
-    
+    local major, minor, patch = partial(version)
 
     return {major = major, minor = minor, patch = patch}
 end
 
 function Version.ToString(version)
     local major, minor, patch = version.major, version.minor, version.patch
+    local majorS, minorS, patchS =
+        major and tostring(major) or "0",
+        minor and tostring(minor) or "0",
+        patch and tostring(patch) or "0"
+
+    return `{majorS}.{minorS}.{patchS}`
 end
 
 --#endregion

@@ -86,6 +86,22 @@ end
 
 --#endregion
 
+--[ Handling Methods ]--
+--#region
+
+function Version.BumpAt(version, place)
+    if place<3 or place<1 then warn(`Invalid component place "{place}"!`); return end
+    local placeS = place==1 and "major" or
+                  (place==2 and "minor" or
+                  (place==3 and "patch"))
+
+    version[placeS] += 1
+end
+
+--#endregion
+
+--#endregion
+
 --#endregion
 
 return Version

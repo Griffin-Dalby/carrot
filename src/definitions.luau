@@ -57,6 +57,9 @@ export type CarrotCore = {
 
 export type VersionApi = {
 
+    --[[ STRING CONSTRUCTORS ]]--
+    --#region
+
     --[[
         Deconstructs a semver string into a Version object
 
@@ -70,7 +73,16 @@ export type VersionApi = {
 
         @param version Version object
     ]]
-    ToString: (version: Version) -> string
+    ToString: (version: Version) -> string,
+
+    --#endregion
+
+    --[[ HANDLING METHODS ]]--
+    --#region
+
+    BumpAt: (version: Version, place: number) -> Version
+
+    --#endregion
 
 }
 

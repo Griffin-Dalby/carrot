@@ -7,7 +7,7 @@ local runCLI = require(script.Parent.bundle.Jest).runCLI
 
 local status, result = runCLI(ReplicatedStorage.carrot, {
 	verbose = false,
-	ci = false
+	ci = true
 }, { ReplicatedStorage.carrot }):awaitStatus()
 
 if status == "Rejected" then

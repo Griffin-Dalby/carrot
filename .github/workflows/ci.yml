@@ -11,9 +11,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: CompeyDev/setup-rokit@v0.2.1
+
+      - run: rokit add christopher-buss/jest-roblox-cli
+      - run: rokit install
       
       - run: wally install
-      - run: rokit install
+      
       - run: jest-roblox --backend open-cloud -formatters default github-actions
         env:
           ROBLOX_OPEN_CLOUD_API_KEY: ${{ secrets.ROBLOX_OPEN_CLOUD_API_KEY }}

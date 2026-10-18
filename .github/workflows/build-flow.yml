@@ -30,10 +30,8 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Setup Rojo
-        uses: rojo-rbx/setup-rojo@v2
-        with:
-          version: 7.4.0
+      - name: Setup Rokit
+        uses: CompeyDev/setup-rokit@v0.2.1
 
       - name: Build Project
         run: |

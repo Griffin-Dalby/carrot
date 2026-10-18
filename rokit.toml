@@ -1,3 +1,4 @@
 [tools]
 rojo = "rojo-rbx/rojo@7.7.1"
 wally = "UpliftGames/wally@0.3.2"
+jest-cli = "christopher-buss/jest-roblox-cli@0.4.7"

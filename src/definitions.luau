@@ -88,6 +88,28 @@ export type VersionApi = {
 
 --#endregion
 
+--[ Range ]--
+--#region
+
+export type RangeApi = {
+
+    --[[ STRING CONSTRUCTORS ]]--
+    --#region
+
+    --[[
+        Deconstructs a semver range into a Range object
+
+        @param range Raw semver range string
+        @return Range object
+    ]]
+    FromString: (range: string) -> ()
+
+    --#endregion
+
+}
+
+--#endregion
+
 --#endregion
 
 --[[ PRIMITIVES ]]--
@@ -110,6 +132,22 @@ export type Version = { major: number, minor: number, patch: number }
     Version, or a semver string that will then be deconstructed.
 ]=]
 export type ConvertibleVersion = string | Version
+
+--#endregion
+
+--[ Range ]--
+--#region
+
+--[=[
+    @type Range {lo: Version, hi: Version?, source: string}
+    @within RangeApi
+
+    Abstracted datatype that represents a deconstructed range, including
+    a low & high (if provided) version, and the source string it came from.
+]=]
+export type Range = {lo: Version, hi: Version?, source: string}
+
+--#endregion
 
 --#endregion
 

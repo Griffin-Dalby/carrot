@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.3](https://github.com/Griffin-Dalby/carrot/compare/v0.2.2...v0.2.3) (2026-10-18)
+
+
+### Bug Fixes
+
+* use proper project.json setup for build config ([c27af60](https://github.com/Griffin-Dalby/carrot/commit/c27af609be1d494bdfbd19c7bc0a8796f9f35811))
+
 ## [0.2.2](https://github.com/Griffin-Dalby/carrot/compare/v0.2.2...v0.2.2) (2026-10-18)
 
 

@@ -57,8 +57,9 @@ export type Range = {
 
 local Range = {} :: Range
 
-function Range.Multiply(n: number, m: number)
-    return n*m
+function Range.FromString(range)
+    local wildcard = range:sub(1,1)
+    
 end
 
 --#endregion

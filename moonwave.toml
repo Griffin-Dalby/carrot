@@ -1,6 +1,13 @@
 gitSourceBranch = "main"
 changelog = true
-classOrder = []
+
+[[classOrder]]
+section = "Carrot"
+classes = ["CarrotCore"]
+
+[[classOrder]]
+section = "API"
+classes = ["VersionApi", "RangeApi"]
 
 [docusaurus]
 onBrokenLinks = "throw"

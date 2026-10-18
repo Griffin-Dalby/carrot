@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[788],{4410:s=>{s.exports=JSON.parse('{"sourceUrl":"https://github.com/Griffin-Dalby/carrot/blob/main","baseUrl":"/carrot/","classOrder":[{"section":"Carrot","classes":["CarrotCore"]},{"section":"API","classes":["VersionApi","RangeApi"]}],"apiCategories":[]}')}}]);

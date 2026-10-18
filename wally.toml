@@ -1,22 +1,30 @@
 [package]
 name = "griffin-dalby/carrot"
-version = "0.1.0"
+version = "0.2.0" # x-release-please-version
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
 
 include = [
     "wally.toml",
-    "src/*"
+    "default.project.json",
 ]
 
 exclude = [
-    "Build/*",
     "DevPackages/*",
-    "tests/*",
+    ".github/*",
+    "node_modules",
+    "build",
+    "tests",
 
-    "**/*.spec.luau",
-    "**/__tests__/",
+    "*.spec.luau",
     "**.json",
+
+    "moonwave.toml",
+    "rokit.toml",
+    "README.md",
+    
+    "src/__tests__",
+    "src/jest.config.luau"
 ]
 
 [dev-dependencies]

@@ -10,7 +10,7 @@ permissions:
     
 jobs:
   tests:
-    uses: ./.github/workflows/cit.yml
+    uses: ./.github/workflows/ci.yml
 
   release-please:
     needs: tests

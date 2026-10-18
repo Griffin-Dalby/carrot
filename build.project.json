@@ -1,7 +1,10 @@
 {
   "name": "carrot",
+  "globIgnorePaths": [
+    "src/__tests__",
+    "src/jest.config.luau"
+  ],
   "tree": {
-    "$className": "ModuleScript",
     "$path": "src/"
   }
 }

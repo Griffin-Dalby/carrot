@@ -21,7 +21,7 @@ jobs:
       - run: npm install --save-dev @isentinel/jest-roblox
       - run: wally install
 
-      - run: jest-roblox --backend open-cloud -formatters default github-actions
+      - run: npx jest-roblox --backend open-cloud -formatters default github-actions
         env:
           ROBLOX_OPEN_CLOUD_API_KEY: ${{ secrets.ROBLOX_OPEN_CLOUD_API_KEY }}
           ROBLOX_UNIVERSE_ID: ${{ secrets.ROBLOX_UNIVERSE_ID }}

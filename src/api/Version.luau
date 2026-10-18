@@ -1,7 +1,8 @@
 --[[
     Carrot Version API
     
-    ClassDescription
+    Provides logic that can parse string semver values & convert it
+    into a form that can be easily worked with.
 --]]
 
 --[[ IMPORTS ]]--
@@ -60,6 +61,12 @@ type VersionApi = Definitions.VersionApi
 --[[ UTILITY OBJECT ]]--
 --#region
 
+--[=[
+    @class VersionApi
+
+    Responsible for translating semver strings into Version objects, and back.
+    It also handles wildcard `1.x` & partial `1.2` strings.
+]=]
 local Version = {} :: VersionApi
 
 --[ Constructors ]--
@@ -68,12 +75,50 @@ local Version = {} :: VersionApi
 --[ String Constructors ]--
 --#region
 
+--[=[
+    @function FromString
+    @within VersionApi
+
+    Translates a semver string into a Version object. Places that are held
+    by a wildcard (*, X, x), or cut off as a partial, will be replaced with zeros.
+
+
+    **Example:**
+    ```lua
+    VersionApi.FromString("1.2.3") --> {major = 1, minor = 2, patch = 3}
+    VersionApi.FromString("1.2")   --> {major = 1, minor = 2, patch = 0} |  (Partial)
+    VersionApi.FromString("1.X.x") --> {major = 1, minor = 0, patch = 0} | (Wildcard)
+    VersionApi.FromString("1.*")   --> {major = 1, minor = 0, patch = 0} | (Wildcard)
+    ```
+
+    @param version string
+    @return Version
+]=]
 function Version.FromString(version)
-    local major, minor, patch = partial(version)
+    local major, minor, patch, n = partial(version)
 
     return {major = major, minor = minor, patch = patch}
 end
 
+
+--[=[
+    @function ToString
+    @within VersionApi
+
+    Translates a Version object into a semver string.
+
+    **Example:**
+    ```lua
+    local version_a = VersionApi.FromString("1.2.4")
+    local version_b = VersionApi.FromString("2.*")
+
+    Version.ToString(version_a) --> "1.2.4"
+    Version.ToString(version_b) --> "2.0.0"
+    ```
+
+    @param version Version
+    @return string
+]=]
 function Version.ToString(version)
     local major, minor, patch = version.major, version.minor, version.patch
     local majorS, minorS, patchS =

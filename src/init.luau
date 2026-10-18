@@ -54,7 +54,7 @@ local Carrot = {} :: CarrotCore
     Parses a version string, and deconstructs it into a format usable
     with the framework.
 
-    @param version Version
+    @param version string
     @return Version
 ]=]
 function Carrot.parse(version)

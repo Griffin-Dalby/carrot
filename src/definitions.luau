@@ -115,9 +115,12 @@ export type RangeApi = {
 --[[ PRIMITIVES ]]--
 --#region
 
+--[ Version ]--
+--#region
+
 --[=[
     @type Version {major: number, minor: number, patch: number}
-    @within CarrotCore
+    @within VersionApi
 
     Primitive datatype that represents a deconstructed version, split
     up into their respective components.
@@ -126,7 +129,7 @@ export type Version = { major: number, minor: number, patch: number }
 
 --[=[
     @type ConvertibleVersion Version | string
-    @within CarrotCore
+    @within VersionApi
 
     Abstracted datatype allowing you to either pass a deconstructed
     Version, or a semver string that will then be deconstructed.

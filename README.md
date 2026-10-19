@@ -1,5 +1,9 @@
 # carrot 🥕
 
+[![Pipeline](https://github.com/griffin-dalby/carrot/actions/workflows/build-flow.yml/badge.svg?branch=main)](https://github.com/griffin-dalby/carrot/actions/workflows/build-flow.yml)
+[![Release](https://img.shields.io/github/v/release/griffin-dalby/carrot)](https://github.com/griffin-dalby/carrot/releases)
+[![License](https://img.shields.io/github/license/griffin-dalby/carrot)](LICENSE)
+
 Lightweight & efficient semver parsing & range matching for LuaU.
 All syntax and comparison ideology is derived from NPM semver syntax. Specifics are listed in [the cheatsheet](#cheatsheet).
 

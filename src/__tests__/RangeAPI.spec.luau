@@ -9,6 +9,6 @@ local RangeAPI = require(ReplicatedStorage.carrot.api.Range)
 
 describe("RangeAPI", function()
     it("Test", function()
-        expect(true).toBe(true)
+        expect(true).toBe(false)
     end)
 end)

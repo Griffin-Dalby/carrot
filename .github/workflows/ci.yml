@@ -16,4 +16,4 @@ jobs:
       - uses: actions/checkout@v4
       - uses: CompeyDev/setup-rokit@v0.2.1
     
-      - run: jest-roblox-cli --backend open-cloud --project carrot --apiKey="${{ secrets.ROBLOX_OPEN_CLOUD_API_KEY }}" --universeId="${{ secrets.ROBLOX_UNIVERSE_ID }}" --placeId="${{ secrets.ROBLOX_PLACE_ID }}"
+      - run: jest-roblox-cli --backend open-cloud --project carrot

@@ -25,4 +25,6 @@ jobs:
         run: rojo build -o game.rbxl
 
       - run: |
-          npx jest-roblox --backend open-cloud --formatters default github-actions --apiKey ${{ secrets.ROBLOX_OPEN_CLOUD_API_KEY }} --universeId ${{ secrets.ROBLOX_UNIVERSE_ID }} --placeId ${{ secrets.ROBLOX_PLACE_ID }}
+          npx jest-roblox --backend open-cloud --formatters default github-actions --universeId ${{ secrets.ROBLOX_UNIVERSE_ID }} --placeId ${{ secrets.ROBLOX_PLACE_ID }}
+        env:
+          ROBLOX_OPEN_CLOUD_API_KEY: ${{ secrets.ROBLOX_OPEN_CLOUD_API_KEY }}

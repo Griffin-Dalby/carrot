@@ -17,4 +17,4 @@ jobs:
           ROBLOX_UNIVERSE_ID: ${{ secrets.ROBLOX_UNIVERSE_ID }}
           ROBLOX_PLACE_ID: ${{ secrets.ROBLOX_PLACE_ID }}
     
-      - run: jest-roblox-cli --backend open-cloud --project carrot
+      - run: jest-roblox-cli --backend open-cloud --project carrot --apiKey="${{ secrets.ROBLOX_OPEN_CLOUD_API_KEY }}" --universeId="${{ secrets.ROBLOX_UNIVERSE_ID }}" --placeId="${{ secrets.ROBLOX_PLACE_ID }}"

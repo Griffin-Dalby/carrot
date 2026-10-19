@@ -11,6 +11,7 @@ permissions:
 jobs:
   tests:
     uses: ./.github/workflows/ci.yml
+    secrets: inherit
 
   release-please:
     needs: tests

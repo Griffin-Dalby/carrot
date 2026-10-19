@@ -23,12 +23,13 @@ exclude = [
     "rokit.toml",
     "README.md",
     
+    "src/.jest-roblox",
     "src/__tests__",
     "src/jest.config.luau"
 ]
 
 [dev-dependencies]
-Jest = "jsdotlua/jest@3.10.0"
-JestGlobals = "jsdotlua/jest-globals@3.10.0"
+Jest = "roblox/jest@^3.20.0"
+JestGlobals = "roblox/jest-globals@^3.20.0"
 
 [dependencies]

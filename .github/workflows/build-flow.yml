@@ -40,7 +40,7 @@ jobs:
 
       - name: Build Project
         run: |
-          rojo build build.project.json --output "project-${{ needs.release-please.outputs.tag_name }}.rbxm"
+          rojo build default.project.json --output "project-${{ needs.release-please.outputs.tag_name }}.rbxm"
 
       - name: Upload Binary to GitHub Release
         env:

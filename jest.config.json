@@ -1,0 +1,11 @@
+{
+  "rojoProject": "./jest.project.json",
+  "jestPath": "ReplicatedStorage/carrotTests/bundle/Jest",
+  "luauRoots": ["src"],
+  "formatters": ["default", "github-actions"],
+  "test": {
+    "projects": [
+        "src"
+    ]
+  }
+}

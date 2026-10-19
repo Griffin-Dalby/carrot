@@ -1,5 +1,5 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local runCLI = require(script.Parent.bundle.Jest).runCLI
+local runCLI = require(script.bundle.Jest).runCLI
 
 -- local processServiceExists, ProcessService = pcall(function()
 -- 	return game:GetService("ProcessService")

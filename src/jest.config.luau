@@ -1,3 +1,4 @@
 return {
-    testMatch = { "**/*.spec" }
+    testMatch = { "**/*.spec" },
+    displayName = "carrot"
 }

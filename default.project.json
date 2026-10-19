@@ -1,15 +1,11 @@
 {
   "name": "carrot",
+  "globIgnorePaths": [
+    "src/__tests__",
+    "src/.jest-roblox",
+    "src/jest.config.luau"
+  ],
   "tree": {
-    "$className": "DataModel",
-
-    "ReplicatedStorage": {
-      "carrot": { "$path": "src/" },
-
-      "carrotTests": {
-        "bundle": { "$path": "DevPackages/" },
-        "$path": "tests/"
-      }
-    }
+    "$path": "src/"
   }
 }

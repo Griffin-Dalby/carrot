@@ -13,3 +13,6 @@ DevPackages/
 # Moonwave
 node_modules/
 build/
+
+# Jest-CLI
+.jest-roblox

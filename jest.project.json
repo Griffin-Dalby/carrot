@@ -1,0 +1,21 @@
+{
+  "name": "carrot",
+  "tree": {
+    "$className": "DataModel",
+
+    "ServerScriptService": {
+      "$properties": {
+        "LoadStringEnabled": true
+      }
+    },
+
+    "ReplicatedStorage": {
+      "carrot": { "$path": "src/" },
+
+      "carrotTests": {
+        "bundle": { "$path": "DevPackages/" },
+        "$path": "tests/"
+      }
+    }
+  }
+}

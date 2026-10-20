@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.2](https://github.com/Griffin-Dalby/carrot/compare/v0.3.1...v0.3.2) (2026-10-20)
+
+
+### Bug Fixes
+
+* disable ci diagnose step ([6aba5b0](https://github.com/Griffin-Dalby/carrot/commit/6aba5b09ea803df266ba254dfa4f16059505938f))
+* move where docusaurus onBrokenLinks warn is ([7ca35b3](https://github.com/Griffin-Dalby/carrot/commit/7ca35b33073db44b67ce3c28bcbb5c10abf96485))
+
 ## [0.3.1](https://github.com/Griffin-Dalby/carrot/compare/v0.3.0...v0.3.1) (2026-10-20)
 
 

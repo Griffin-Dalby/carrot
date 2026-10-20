@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.1](https://github.com/Griffin-Dalby/carrot/compare/v0.3.0...v0.3.1) (2026-10-20)
+
+
+### Bug Fixes
+
+* force docusaurus to warn on broken links ([c594c66](https://github.com/Griffin-Dalby/carrot/commit/c594c668fb6216ec3ff3ff3d8f3090d3ec17367f))
+
 ## [0.3.0](https://github.com/Griffin-Dalby/carrot/compare/v0.2.3...v0.3.0) (2026-10-20)
 
 

@@ -1,5 +1,43 @@
 # Changelog
 
+## [0.3.0](https://github.com/Griffin-Dalby/carrot/compare/v0.2.3...v0.3.0) (2026-10-20)
+
+
+### Features
+
+* **core:** fully clone npmjs semantic versioner api to solidify ease of use, and direction of project. ([3727cd9](https://github.com/Griffin-Dalby/carrot/commit/3727cd93281510c78649ab20e0c954a7fb9e4776))
+* use double dasf rather than singe for formatters ([84e2ddf](https://github.com/Griffin-Dalby/carrot/commit/84e2ddf899b2b15cedd9c45e103bbc89c50c20a5))
+
+
+### Bug Fixes
+
+* add CI for tests ([500cd15](https://github.com/Griffin-Dalby/carrot/commit/500cd157454ec30a1d594390c11d94bc9fc7e15d))
+* add placeholder test for RangeAPI tests ([0b880b0](https://github.com/Griffin-Dalby/carrot/commit/0b880b0ebb6f83687f5ea680c5d3fe2625ed6e59))
+* add roblox-cli as trusted before rokit install, and wally install after rokit ([2477e48](https://github.com/Griffin-Dalby/carrot/commit/2477e4830ebf37e991a19b0015cfd74b1ef942f5))
+* build rbxl file for jest ([941ee6b](https://github.com/Griffin-Dalby/carrot/commit/941ee6bf40bb4da14b09e1535df2bcc4bd5cebac))
+* cleanup ci pipeline massively ([67a42a9](https://github.com/Griffin-Dalby/carrot/commit/67a42a9cc51bae46e42a11f53396faa46261c0c4))
+* declare env before running jest ([2128836](https://github.com/Griffin-Dalby/carrot/commit/2128836f0d9297f1b0e2b0c1b6d5b1b316438be0))
+* fix purposefully failing build, get ready to actually work on the library bruh damn ([81cffa1](https://github.com/Griffin-Dalby/carrot/commit/81cffa163f615a5fc98edb6e2f505fb52ed140ed))
+* fix rokit package name ([4578cbf](https://github.com/Griffin-Dalby/carrot/commit/4578cbf4e83af2a812597918ac0cedfeb8595911))
+* fully implement jest test environment and ensure it works in CI ([2eb7d25](https://github.com/Griffin-Dalby/carrot/commit/2eb7d255f567781e5b3fea860c4564ae2d927c92))
+* install jext-roblox with npm rather than rokit ([e50daff](https://github.com/Griffin-Dalby/carrot/commit/e50daff22714676fe2883e88b93e44906b6ce2cc))
+* install rokit for ci ([2ac4e24](https://github.com/Griffin-Dalby/carrot/commit/2ac4e24a9a1365e75428a501357d1bb1b0dfc38b))
+* make build-flow use ci ([8aa1582](https://github.com/Griffin-Dalby/carrot/commit/8aa15824b8791ee9aa68a547634bbd83cc0eac3d))
+* misspelt cloud bruh ([5a4a25f](https://github.com/Griffin-Dalby/carrot/commit/5a4a25f3aadd9dd0156d0dc16e38080ea3df5ddf))
+* open cloud API key needs to be in ENV ([374d290](https://github.com/Griffin-Dalby/carrot/commit/374d290cb5aea53f906b7f7942a4fd3fc43a00e2))
+* pass env things as args ([1617984](https://github.com/Griffin-Dalby/carrot/commit/16179844e59c531588d97689d547f37e78b00a01))
+* put env before steps ([84ae607](https://github.com/Griffin-Dalby/carrot/commit/84ae60773ea918bd1886fad5797a337261c50ace))
+* put universe & place ID into env ([800516b](https://github.com/Griffin-Dalby/carrot/commit/800516bd11d1133addca1cb0bba116653bd4a3fb))
+* remove env props from run ([439f7c1](https://github.com/Griffin-Dalby/carrot/commit/439f7c19601e1eaf85814109b76503957f68d4a4))
+* run jest with npx ([51b7c3a](https://github.com/Griffin-Dalby/carrot/commit/51b7c3a5c78137ea82b2dd42bd8812f1953e0797))
+* secrets werent being inherited this whole time ngl ([97818cc](https://github.com/Griffin-Dalby/carrot/commit/97818ccb26182d8bbd63ccb7fa9cd47b039b0f41))
+* specify key, universe, and place for jest ([1da6c0c](https://github.com/Griffin-Dalby/carrot/commit/1da6c0c9a97faced79749cf1e8a032aede5df420))
+* this ci shit is going to make me go insane ([9fc0612](https://github.com/Griffin-Dalby/carrot/commit/9fc06121da6c1c5fc7eca5f27a219f37140b8257))
+* use npm --save-dev rather than npx ([a82fb6d](https://github.com/Griffin-Dalby/carrot/commit/a82fb6d1732140c06805ec40e2ad118d15375b78))
+* use npm rather than npm for ci ([1dfe75f](https://github.com/Griffin-Dalby/carrot/commit/1dfe75fe39fe71ea4963d6b3d2c1d8849b58b6c7))
+* use same line for jest ([7f3b49d](https://github.com/Griffin-Dalby/carrot/commit/7f3b49d6eca80647c62f85d12e714e962ee3e9b6))
+* use straight jest-roblox-cli ([e2faea2](https://github.com/Griffin-Dalby/carrot/commit/e2faea29d2fbdcc4987c36cf893a4a4db97d04ab))
+
 ## [0.2.3](https://github.com/Griffin-Dalby/carrot/compare/v0.2.2...v0.2.3) (2026-10-18)
 
 

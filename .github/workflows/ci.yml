@@ -15,10 +15,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: CompeyDev/setup-rokit@v0.2.1
-      - name: Diagnose
-        run: |
-          echo "event=${{ github.event_name }} fork=${{ github.event.pull_request.head.repo.fork }}"
-          echo "lengths: key=${#ROBLOX_OPEN_CLOUD_API_KEY} universe=${#ROBLOX_UNIVERSE_ID} place=${#ROBLOX_PLACE_ID}"
-          jest-roblox-cli --version
+      
       - run: wally install
       - run: jest-roblox-cli --backend open-cloud --project carrot

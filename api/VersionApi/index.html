@@ -6,8 +6,8 @@
 <title data-rh="true">VersionApi | carrot</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://Griffin-Dalby.github.io/carrot/api/VersionApi"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docusaurus_tag" content="default"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docsearch:docusaurus_tag" content="default"><meta data-rh="true" property="og:title" content="VersionApi | carrot"><meta data-rh="true" name="description" content="Responsible for translating semver strings into Version objects, and back.
 It also handles wildcard `1.x` &amp; partial `1.2` strings."><meta data-rh="true" property="og:description" content="Responsible for translating semver strings into Version objects, and back.
 It also handles wildcard `1.x` &amp; partial `1.2` strings."><link data-rh="true" rel="canonical" href="https://Griffin-Dalby.github.io/carrot/api/VersionApi"><link data-rh="true" rel="alternate" href="https://Griffin-Dalby.github.io/carrot/api/VersionApi" hreflang="en"><link data-rh="true" rel="alternate" href="https://Griffin-Dalby.github.io/carrot/api/VersionApi" hreflang="x-default"><link rel="stylesheet" href="/carrot/assets/css/styles.e8e96400.css">
-<script src="/carrot/assets/js/runtime~main.42a9e7e9.js" defer="defer"></script>
-<script src="/carrot/assets/js/main.035873cb.js" defer="defer"></script>
+<script src="/carrot/assets/js/runtime~main.a1d01412.js" defer="defer"></script>
+<script src="/carrot/assets/js/main.721aa277.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -18,12 +18,12 @@ It also handles wildcard `1.x` &amp; partial `1.2` strings."><link data-rh="true
   Responsible for translating semver strings into Version objects, and back.
   It also handles wildcard <code>1.x</code> &#x26; partial <code>1.2</code> strings.
 </p>
-</div></header><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="types">Types<a href="#types" class="hash-link" aria-label="Direct link to Types" title="Direct link to Types" translate="no">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Version"><code style="text-decoration:none">Version</code><a href="#Version" class="hash-link" aria-label="Direct link to Version" title="Direct link to Version" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Griffin-Dalby/carrot/blob/main/src/definitions.luau#L128"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>Version<!-- --> = </code> <code class="purple_ieR2">{</code><div class="inset_uKQm"><code>major<!-- -->: </code><code class="blue_P4bS">number</code><code class="purple_ieR2">,</code></div><div class="inset_uKQm"><code>minor<!-- -->: </code><code class="blue_P4bS">number</code><code class="purple_ieR2">,</code></div><div class="inset_uKQm"><code>patch<!-- -->: </code><code class="blue_P4bS">number</code></div><code class="purple_ieR2">}</code></div><div>
+</div></header><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="types">Types<a href="#types" class="hash-link" aria-label="Direct link to Types" title="Direct link to Types" translate="no">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Version"><code style="text-decoration:none">Version</code><a href="#Version" class="hash-link" aria-label="Direct link to Version" title="Direct link to Version" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Griffin-Dalby/carrot/blob/main/src/definitions.luau#L365"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>Version<!-- --> = </code> <code class="purple_ieR2">{</code><div class="inset_uKQm"><code>major<!-- -->: </code><code class="blue_P4bS">number</code><code class="purple_ieR2">,</code></div><div class="inset_uKQm"><code>minor<!-- -->: </code><code class="blue_P4bS">number</code><code class="purple_ieR2">,</code></div><div class="inset_uKQm"><code>patch<!-- -->: </code><code class="blue_P4bS">number</code></div><code class="purple_ieR2">}</code></div><div>
 <p>
   Primitive datatype that represents a deconstructed version, split
   up into their respective components.
 </p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ConvertibleVersion"><code style="text-decoration:none">ConvertibleVersion</code><a href="#ConvertibleVersion" class="hash-link" aria-label="Direct link to ConvertibleVersion" title="Direct link to ConvertibleVersion" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Griffin-Dalby/carrot/blob/main/src/definitions.luau#L137"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>ConvertibleVersion<!-- --> = </code> <code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/carrot/api/VersionApi#Version">Version</a></code><code class="op_lSLc"> | </code><code class="blue_P4bS">string</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ConvertibleVersion"><code style="text-decoration:none">ConvertibleVersion</code><a href="#ConvertibleVersion" class="hash-link" aria-label="Direct link to ConvertibleVersion" title="Direct link to ConvertibleVersion" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Griffin-Dalby/carrot/blob/main/src/definitions.luau#L374"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>ConvertibleVersion<!-- --> = </code> <code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/carrot/api/VersionApi#Version">Version</a></code><code class="op_lSLc"> | </code><code class="blue_P4bS">string</code></div><div>
 <p>
   Abstracted datatype allowing you to either pass a deconstructed
   Version, or a semver string that will then be deconstructed.
@@ -102,7 +102,7 @@ Version<span class="token punctuation">.</span><span class="token function">ToSt
             &quot;desc&quot;: &quot;Primitive datatype that represents a deconstructed version, split\nup into their respective components.&quot;,
             &quot;lua_type&quot;: &quot;{major: number, minor: number, patch: number}&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 128,
+                &quot;line&quot;: 365,
                 &quot;path&quot;: &quot;src/definitions.luau&quot;
             }
         },
@@ -111,7 +111,7 @@ Version<span class="token punctuation">.</span><span class="token function">ToSt
             &quot;desc&quot;: &quot;Abstracted datatype allowing you to either pass a deconstructed\nVersion, or a semver string that will then be deconstructed.&quot;,
             &quot;lua_type&quot;: &quot;Version | string&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 137,
+                &quot;line&quot;: 374,
                 &quot;path&quot;: &quot;src/definitions.luau&quot;
             }
         }

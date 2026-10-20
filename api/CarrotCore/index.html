@@ -6,8 +6,8 @@
 <title data-rh="true">CarrotCore | carrot</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://Griffin-Dalby.github.io/carrot/api/CarrotCore"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docusaurus_tag" content="default"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docsearch:docusaurus_tag" content="default"><meta data-rh="true" property="og:title" content="CarrotCore | carrot"><meta data-rh="true" name="description" content="Core module &amp; entry-point for the carrot framework. It aggregates all of the methods needed to read &amp; parse semver 
 strings."><meta data-rh="true" property="og:description" content="Core module &amp; entry-point for the carrot framework. It aggregates all of the methods needed to read &amp; parse semver 
 strings."><link data-rh="true" rel="canonical" href="https://Griffin-Dalby.github.io/carrot/api/CarrotCore"><link data-rh="true" rel="alternate" href="https://Griffin-Dalby.github.io/carrot/api/CarrotCore" hreflang="en"><link data-rh="true" rel="alternate" href="https://Griffin-Dalby.github.io/carrot/api/CarrotCore" hreflang="x-default"><link rel="stylesheet" href="/carrot/assets/css/styles.e8e96400.css">
-<script src="/carrot/assets/js/runtime~main.42a9e7e9.js" defer="defer"></script>
-<script src="/carrot/assets/js/main.035873cb.js" defer="defer"></script>
+<script src="/carrot/assets/js/runtime~main.a1d01412.js" defer="defer"></script>
+<script src="/carrot/assets/js/main.721aa277.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -18,20 +18,185 @@ strings."><link data-rh="true" rel="canonical" href="https://Griffin-Dalby.githu
   Core module &#x26; entry-point for the carrot framework. It aggregates all of the methods needed to read &#x26; parse semver
   strings.
 </p>
-</div></header><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="functions">Functions<a href="#functions" class="hash-link" aria-label="Direct link to Functions" title="Direct link to Functions" translate="no">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="parse"><code style="text-decoration:none">parse</code><a href="#parse" class="hash-link" aria-label="Direct link to parse" title="Direct link to parse" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Griffin-Dalby/carrot/blob/main/src/init.luau#L60"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>CarrotCore<!-- -->.</code><code class="green_DgR4">parse</code><code>(</code><code>version<!-- -->: </code><code class="blue_P4bS">string</code><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/carrot/api/VersionApi#Version">Version</a></code></div><div>
+</div></header><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="types">Types<a href="#types" class="hash-link" aria-label="Direct link to Types" title="Direct link to Types" translate="no">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ReleaseType"><code style="text-decoration:none">ReleaseType</code><a href="#ReleaseType" class="hash-link" aria-label="Direct link to ReleaseType" title="Direct link to ReleaseType" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Griffin-Dalby/carrot/blob/main/src/definitions.luau#L339"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>ReleaseType<!-- --> = </code> <code class="blue_P4bS">&quot;major&quot;</code><code class="op_lSLc"> | </code><code class="blue_P4bS">&quot;minor&quot;</code><code class="op_lSLc"> | </code><code class="blue_P4bS">&quot;patch</code></div><div>
+<p>Defines the specific release types defined within the version string.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="Comparator"><code style="text-decoration:none">Comparator</code><a href="#Comparator" class="hash-link" aria-label="Direct link to Comparator" title="Direct link to Comparator" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Griffin-Dalby/carrot/blob/main/src/definitions.luau#L350"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">type</code> <code>Comparator<!-- --> = </code> <code class="blue_P4bS">&quot;</code><code class="op_lSLc">&gt;</code><code class="blue_P4bS">&quot;</code><code class="op_lSLc"> | </code><code class="blue_P4bS">&quot;</code><code class="op_lSLc">&gt;</code><code class="blue_P4bS">=&quot;</code><code class="op_lSLc"> | </code><code class="blue_P4bS">&quot;</code><code class="op_lSLc">&lt;</code><code class="blue_P4bS">&quot;</code><code class="op_lSLc"> | </code><code class="blue_P4bS">&quot;</code><code class="op_lSLc">&lt;</code><code class="blue_P4bS">=&quot;</code><code class="op_lSLc"> | </code><code class="blue_P4bS">&quot;==&quot;</code><code class="op_lSLc"> | </code><code class="blue_P4bS">&quot;!=&quot;</code></div><div>
 <p>
-  Parses a version string, and deconstructs it into a format usable
-  with the framework.
+  Defines any comparator that can be used in a free comparison function, such
+  as <code>cmp(v1, Compartor, v2)</code>, and it will call the correlating comparison.
 </p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="satisfies"><code style="text-decoration:none">satisfies</code><a href="#satisfies" class="hash-link" aria-label="Direct link to satisfies" title="Direct link to satisfies" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Griffin-Dalby/carrot/blob/main/src/init.luau#L74"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>CarrotCore<!-- -->.</code><code class="green_DgR4">satisfies</code><code>(</code><div class="inset_uKQm"><div><code>version<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/carrot/api/VersionApi#ConvertibleVersion">ConvertibleVersion</a></code><code>,</code></div><div><code>requirement<!-- -->: </code><code class="blue_P4bS">string</code></div></div><code>) → </code><code class="blue_P4bS">boolean</code></div><div>
-<p>Checks if a specific version fits a semver range requirement</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="format"><code style="text-decoration:none">format</code><a href="#format" class="hash-link" aria-label="Direct link to format" title="Direct link to format" translate="no">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Griffin-Dalby/carrot/blob/main/src/init.luau#L87"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>CarrotCore<!-- -->.</code><code class="green_DgR4">format</code><code>(</code><code>version<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/carrot/api/VersionApi#Version">Version</a></code><code>) → </code><code class="blue_P4bS">string</code></div><div>
-<p>Reconstructs a Version table back into a semver string</p>
+<p><code>"==="</code> and <code>"!=="</code> do simple string comparison, but are included for completeness.</p>
+</div><h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="functions">Functions<a href="#functions" class="hash-link" aria-label="Direct link to Functions" title="Direct link to Functions" translate="no">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="valid"><code style="text-decoration:none">valid</code><a href="#valid" class="hash-link" aria-label="Direct link to valid" title="Direct link to valid" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#00a1e4;color:#00a1e4">Version</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Griffin-Dalby/carrot/blob/main/src/init.luau#L65"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>CarrotCore<!-- -->.</code><code class="green_DgR4">valid</code><code>(</code><code>version<!-- -->: </code><code class="blue_P4bS">String</code><code>) → </code><code class="blue_P4bS">string</code></div><div>
+<p><a href="https://docs.npmjs.com/cli/v6/using-npm/semver#functions">View this on npm semver docs</a></p>
+<p>Return the parsed version, or null if it's not valid.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="inc"><code style="text-decoration:none">inc</code><a href="#inc" class="hash-link" aria-label="Direct link to inc" title="Direct link to inc" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#00a1e4;color:#00a1e4">Version</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Griffin-Dalby/carrot/blob/main/src/init.luau#L82"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>CarrotCore<!-- -->.</code><code class="green_DgR4">inc</code><code>(</code><div class="inset_uKQm"><div><code>version<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code></div><div><code>release<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/carrot/api/CarrotCore#ReleaseType">ReleaseType</a></code></div></div><code>) → </code><code class="blue_P4bS">string</code></div><div>
+<p><a href="https://docs.npmjs.com/cli/v6/using-npm/semver#functions">View this on npm semver docs</a></p>
+<p>Return the version incremented by the release type (<code>major</code>, <code>minor</code>, or <code>patch</code>), or null if it's not valid.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="major"><code style="text-decoration:none">major</code><a href="#major" class="hash-link" aria-label="Direct link to major" title="Direct link to major" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#00a1e4;color:#00a1e4">Version</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Griffin-Dalby/carrot/blob/main/src/init.luau#L99"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>CarrotCore<!-- -->.</code><code class="green_DgR4">major</code><code>(</code><code>version<!-- -->: </code><code class="blue_P4bS">string</code><code>) → </code><code class="blue_P4bS">number</code></div><div>
+<p><a href="https://docs.npmjs.com/cli/v6/using-npm/semver#functions">View this on npm semver docs</a></p>
+<p>Return the major version number</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="minor"><code style="text-decoration:none">minor</code><a href="#minor" class="hash-link" aria-label="Direct link to minor" title="Direct link to minor" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#00a1e4;color:#00a1e4">Version</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Griffin-Dalby/carrot/blob/main/src/init.luau#L115"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>CarrotCore<!-- -->.</code><code class="green_DgR4">minor</code><code>(</code><code>version<!-- -->: </code><code class="blue_P4bS">string</code><code>) → </code><code class="blue_P4bS">number</code></div><div>
+<p><a href="https://docs.npmjs.com/cli/v6/using-npm/semver#functions">View this on npm semver docs</a></p>
+<p>Return the minor version number</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="patch"><code style="text-decoration:none">patch</code><a href="#patch" class="hash-link" aria-label="Direct link to patch" title="Direct link to patch" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#00a1e4;color:#00a1e4">Version</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Griffin-Dalby/carrot/blob/main/src/init.luau#L131"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>CarrotCore<!-- -->.</code><code class="green_DgR4">patch</code><code>(</code><code>version<!-- -->: </code><code class="blue_P4bS">string</code><code>) → </code><code class="blue_P4bS">number</code></div><div>
+<p><a href="https://docs.npmjs.com/cli/v6/using-npm/semver#functions">View this on npm semver docs</a></p>
+<p>Return the patch version number</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="parse"><code style="text-decoration:none">parse</code><a href="#parse" class="hash-link" aria-label="Direct link to parse" title="Direct link to parse" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#00a1e4;color:#00a1e4">Version</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Griffin-Dalby/carrot/blob/main/src/init.luau#L149"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>CarrotCore<!-- -->.</code><code class="green_DgR4">parse</code><code>(</code><code>version<!-- -->: </code><code class="blue_P4bS">string</code><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/carrot/api/VersionApi#Version">Version?</a></code></div><div>
+<p><a href="https://docs.npmjs.com/cli/v6/using-npm/semver#functions">View this on npm semver docs</a></p>
+<p>
+  Attempt to parse a string as a semantic version, returning either a <code>Version</code>
+  object, or <code>null</code>.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="gt"><code style="text-decoration:none">gt</code><a href="#gt" class="hash-link" aria-label="Direct link to gt" title="Direct link to gt" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#70cc00;color:#70cc00">Comparison</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Griffin-Dalby/carrot/blob/main/src/init.luau#L171"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>CarrotCore<!-- -->.</code><code class="green_DgR4">gt</code><code>(</code><div class="inset_uKQm"><div><code>v1<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/carrot/api/VersionApi#ConvertibleVersion">ConvertibleVersion</a></code><code>,</code></div><div><code>v2<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/carrot/api/VersionApi#ConvertibleVersion">ConvertibleVersion</a></code></div></div><code>) → </code><code class="blue_P4bS">boolean</code></div><div>
+<p><a href="https://docs.npmjs.com/cli/v6/using-npm/semver#comparison">View this on npm semver docs</a></p>
+<p>Compares if v1 is <strong>greater than</strong> v2. <code>(v1 > v2)</code></p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="gte"><code style="text-decoration:none">gte</code><a href="#gte" class="hash-link" aria-label="Direct link to gte" title="Direct link to gte" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#70cc00;color:#70cc00">Comparison</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Griffin-Dalby/carrot/blob/main/src/init.luau#L188"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>CarrotCore<!-- -->.</code><code class="green_DgR4">gte</code><code>(</code><div class="inset_uKQm"><div><code>v1<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/carrot/api/VersionApi#ConvertibleVersion">ConvertibleVersion</a></code><code>,</code></div><div><code>v2<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/carrot/api/VersionApi#ConvertibleVersion">ConvertibleVersion</a></code></div></div><code>) → </code><code class="blue_P4bS">boolean</code></div><div>
+<p><a href="https://docs.npmjs.com/cli/v6/using-npm/semver#comparison">View this on npm semver docs</a></p>
+<p>Compares if v1 is <strong>greater than or equal to</strong> v2. <code>(v1 >= v2)</code></p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="lt"><code style="text-decoration:none">lt</code><a href="#lt" class="hash-link" aria-label="Direct link to lt" title="Direct link to lt" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#70cc00;color:#70cc00">Comparison</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Griffin-Dalby/carrot/blob/main/src/init.luau#L205"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>CarrotCore<!-- -->.</code><code class="green_DgR4">lt</code><code>(</code><div class="inset_uKQm"><div><code>v1<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/carrot/api/VersionApi#ConvertibleVersion">ConvertibleVersion</a></code><code>,</code></div><div><code>v2<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/carrot/api/VersionApi#ConvertibleVersion">ConvertibleVersion</a></code></div></div><code>) → </code><code class="blue_P4bS">boolean</code></div><div>
+<p><a href="https://docs.npmjs.com/cli/v6/using-npm/semver#comparison">View this on npm semver docs</a></p>
+<p>Compares if v1 is <strong>less than</strong> v2. <code>(v1 &#x3C; v2)</code></p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="lte"><code style="text-decoration:none">lte</code><a href="#lte" class="hash-link" aria-label="Direct link to lte" title="Direct link to lte" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#70cc00;color:#70cc00">Comparison</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Griffin-Dalby/carrot/blob/main/src/init.luau#L222"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>CarrotCore<!-- -->.</code><code class="green_DgR4">lte</code><code>(</code><div class="inset_uKQm"><div><code>v1<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/carrot/api/VersionApi#ConvertibleVersion">ConvertibleVersion</a></code><code>,</code></div><div><code>v2<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/carrot/api/VersionApi#ConvertibleVersion">ConvertibleVersion</a></code></div></div><code>) → </code><code class="blue_P4bS">boolean</code></div><div>
+<p><a href="https://docs.npmjs.com/cli/v6/using-npm/semver#comparison">View this on npm semver docs</a></p>
+<p>Compares if v1 is <strong>less than or equal to</strong> v2. <code>(v1 &#x3C;= v2)</code></p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="eq"><code style="text-decoration:none">eq</code><a href="#eq" class="hash-link" aria-label="Direct link to eq" title="Direct link to eq" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#70cc00;color:#70cc00">Comparison</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Griffin-Dalby/carrot/blob/main/src/init.luau#L239"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>CarrotCore<!-- -->.</code><code class="green_DgR4">eq</code><code>(</code><div class="inset_uKQm"><div><code>v1<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/carrot/api/VersionApi#ConvertibleVersion">ConvertibleVersion</a></code><code>,</code></div><div><code>v2<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/carrot/api/VersionApi#ConvertibleVersion">ConvertibleVersion</a></code></div></div><code>) → </code><code class="blue_P4bS">boolean</code></div><div>
+<p><a href="https://docs.npmjs.com/cli/v6/using-npm/semver#comparison">View this on npm semver docs</a></p>
+<p>Compares if v1 is <strong>equal to</strong> v2. <code>(v1 == v2)</code></p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="neq"><code style="text-decoration:none">neq</code><a href="#neq" class="hash-link" aria-label="Direct link to neq" title="Direct link to neq" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#70cc00;color:#70cc00">Comparison</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Griffin-Dalby/carrot/blob/main/src/init.luau#L256"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>CarrotCore<!-- -->.</code><code class="green_DgR4">neq</code><code>(</code><div class="inset_uKQm"><div><code>v1<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/carrot/api/VersionApi#ConvertibleVersion">ConvertibleVersion</a></code><code>,</code></div><div><code>v2<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/carrot/api/VersionApi#ConvertibleVersion">ConvertibleVersion</a></code></div></div><code>) → </code><code class="blue_P4bS">boolean</code></div><div>
+<p><a href="https://docs.npmjs.com/cli/v6/using-npm/semver#comparison">View this on npm semver docs</a></p>
+<p>Compares if v1 is <strong>not equal to</strong> v2. <code>(v1 != v2)</code></p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="cmp"><code style="text-decoration:none">cmp</code><a href="#cmp" class="hash-link" aria-label="Direct link to cmp" title="Direct link to cmp" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#70cc00;color:#70cc00">Comparison</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Griffin-Dalby/carrot/blob/main/src/init.luau#L276"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>CarrotCore<!-- -->.</code><code class="green_DgR4">cmp</code><code>(</code><div class="inset_uKQm"><div><code>v1<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/carrot/api/VersionApi#ConvertibleVersion">ConvertibleVersion</a></code><code>,</code></div><div><code>comp<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/carrot/api/CarrotCore#Comparator">Comparator</a></code><code>,</code></div><div><code>v2<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/carrot/api/VersionApi#ConvertibleVersion">ConvertibleVersion</a></code></div></div><code>) → </code><code class="blue_P4bS">boolean</code></div><div>
+<p><a href="https://docs.npmjs.com/cli/v6/using-npm/semver#comparison">View this on npm semver docs</a></p>
+<p>
+  Pass in a comparison string, and it'll call the corresponding comparison
+  function. Throws if an invalid comparison string is provided.
+  <code>"==="</code> and <code>"!=="</code> do simple string comparison, but are included for completeness.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="compare"><code style="text-decoration:none">compare</code><a href="#compare" class="hash-link" aria-label="Direct link to compare" title="Direct link to compare" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#70cc00;color:#70cc00">Comparison</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Griffin-Dalby/carrot/blob/main/src/init.luau#L296"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>CarrotCore<!-- -->.</code><code class="green_DgR4">compare</code><code>(</code><div class="inset_uKQm"><div><code>v1<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/carrot/api/VersionApi#ConvertibleVersion">ConvertibleVersion</a></code><code>,</code></div><div><code>v2<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/carrot/api/VersionApi#ConvertibleVersion">ConvertibleVersion</a></code></div></div><code>) → </code><code class="blue_P4bS">number</code></div><div>
+<p><a href="https://docs.npmjs.com/cli/v6/using-npm/semver#comparison">View this on npm semver docs</a></p>
+<p>
+  Return <code>0</code> if <code>v1 == v2</code>, <code>1</code> if <code>v1</code> is greater, or <code>-1</code> if <code>v2</code> is greater.
+  Unlike a JavaScript Array.sort comparator, this numeric result cannot be passed directly
+  to Luau <code>table.sort()</code>, whose comparator must return a boolean. Use <code>lt</code> as the sort
+  comparator for ascending semantic-version order (for example, <code>table.sort(versions, lt)</code>).
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="rcompare"><code style="text-decoration:none">rcompare</code><a href="#rcompare" class="hash-link" aria-label="Direct link to rcompare" title="Direct link to rcompare" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#70cc00;color:#70cc00">Comparison</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Griffin-Dalby/carrot/blob/main/src/init.luau#L313"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>CarrotCore<!-- -->.</code><code class="green_DgR4">rcompare</code><code>(</code><div class="inset_uKQm"><div><code>v1<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/carrot/api/VersionApi#ConvertibleVersion">ConvertibleVersion</a></code><code>,</code></div><div><code>v2<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/carrot/api/VersionApi#ConvertibleVersion">ConvertibleVersion</a></code></div></div><code>) → </code><code class="blue_P4bS">number</code></div><div>
+<p><a href="https://docs.npmjs.com/cli/v6/using-npm/semver#comparison">View this on npm semver docs</a></p>
+<p>The reserse of compare. Comes with the same limitations.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="diff"><code style="text-decoration:none">diff</code><a href="#diff" class="hash-link" aria-label="Direct link to diff" title="Direct link to diff" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#70cc00;color:#70cc00">Comparison</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Griffin-Dalby/carrot/blob/main/src/init.luau#L331"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>CarrotCore<!-- -->.</code><code class="green_DgR4">diff</code><code>(</code><div class="inset_uKQm"><div><code>v1<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/carrot/api/VersionApi#ConvertibleVersion">ConvertibleVersion</a></code><code>,</code></div><div><code>v2<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/carrot/api/VersionApi#ConvertibleVersion">ConvertibleVersion</a></code></div></div><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/carrot/api/CarrotCore#ReleaseType">ReleaseType</a></code></div><div>
+<p><a href="https://docs.npmjs.com/cli/v6/using-npm/semver#comparison">View this on npm semver docs</a></p>
+<p>
+  Returns difference between two versions by the release type (<code>major</code>, <code>minor</code>, or <code>patch</code>),
+  or <code>null</code> if the versions are the same.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="validRange"><code style="text-decoration:none">validRange</code><a href="#validRange" class="hash-link" aria-label="Direct link to validRange" title="Direct link to validRange" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#218c74;color:#218c74">Ranges</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Griffin-Dalby/carrot/blob/main/src/init.luau#L352"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>CarrotCore<!-- -->.</code><code class="green_DgR4">validRange</code><code>(</code><code>range<!-- -->: </code><code class="blue_P4bS">string</code><code>) → </code><code class="blue_P4bS">string</code></div><div>
+<p><a href="https://docs.npmjs.com/cli/v6/using-npm/semver#ranges-1">View this on npm semver docs</a></p>
+<p>Return the valid range, or null if it's not valid.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="satisfies"><code style="text-decoration:none">satisfies</code><a href="#satisfies" class="hash-link" aria-label="Direct link to satisfies" title="Direct link to satisfies" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#218c74;color:#218c74">Ranges</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Griffin-Dalby/carrot/blob/main/src/init.luau#L369"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>CarrotCore<!-- -->.</code><code class="green_DgR4">satisfies</code><code>(</code><div class="inset_uKQm"><div><code>version<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/carrot/api/VersionApi#ConvertibleVersion">ConvertibleVersion</a></code><code>,</code></div><div><code>range<!-- -->: </code><code class="blue_P4bS">string</code></div></div><code>) → </code><code class="blue_P4bS">boolean</code></div><div>
+<p><a href="https://docs.npmjs.com/cli/v6/using-npm/semver#ranges-1">View this on npm semver docs</a></p>
+<p>Return true if the version satisfies the range.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="maxSatisfying"><code style="text-decoration:none">maxSatisfying</code><a href="#maxSatisfying" class="hash-link" aria-label="Direct link to maxSatisfying" title="Direct link to maxSatisfying" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#218c74;color:#218c74">Ranges</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Griffin-Dalby/carrot/blob/main/src/init.luau#L387"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>CarrotCore<!-- -->.</code><code class="green_DgR4">maxSatisfying</code><code>(</code><div class="inset_uKQm"><div><code>version<!-- -->: </code><code class="purple_ieR2">{</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/carrot/api/VersionApi#ConvertibleVersion">ConvertibleVersion</a></code><code class="purple_ieR2">}</code><code>,</code></div><div><code>range<!-- -->: </code><code class="blue_P4bS">string</code></div></div><code>) → </code><code class="blue_P4bS">string?</code></div><div>
+<p><a href="https://docs.npmjs.com/cli/v6/using-npm/semver#ranges-1">View this on npm semver docs</a></p>
+<p>
+  Return the highest version in the list that satisfies the range, or
+  <code>null</code> if none of them do.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="minSatisfying"><code style="text-decoration:none">minSatisfying</code><a href="#minSatisfying" class="hash-link" aria-label="Direct link to minSatisfying" title="Direct link to minSatisfying" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#218c74;color:#218c74">Ranges</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Griffin-Dalby/carrot/blob/main/src/init.luau#L405"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>CarrotCore<!-- -->.</code><code class="green_DgR4">minSatisfying</code><code>(</code><div class="inset_uKQm"><div><code>versions<!-- -->: </code><code class="purple_ieR2">{</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/carrot/api/VersionApi#ConvertibleVersion">ConvertibleVersion</a></code><code class="purple_ieR2">}</code><code>,</code></div><div><code>range<!-- -->: </code><code class="blue_P4bS">string</code></div></div><code>) → </code><code class="blue_P4bS">string?</code></div><div>
+<p><a href="https://docs.npmjs.com/cli/v6/using-npm/semver#ranges-1">View this on npm semver docs</a></p>
+<p>
+  Return the lowest version in the list that satisfies the range, or
+  <code>null</code> if none of them do.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="minVersion"><code style="text-decoration:none">minVersion</code><a href="#minVersion" class="hash-link" aria-label="Direct link to minVersion" title="Direct link to minVersion" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#218c74;color:#218c74">Ranges</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Griffin-Dalby/carrot/blob/main/src/init.luau#L421"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>CarrotCore<!-- -->.</code><code class="green_DgR4">minVersion</code><code>(</code><code>range<!-- -->: </code><code class="blue_P4bS">string</code><code>) → </code><code class="blue_P4bS">string</code></div><div>
+<p><a href="https://docs.npmjs.com/cli/v6/using-npm/semver#ranges-1">View this on npm semver docs</a></p>
+<p>Return the lowest version that can possibly match the given range.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="gtr"><code style="text-decoration:none">gtr</code><a href="#gtr" class="hash-link" aria-label="Direct link to gtr" title="Direct link to gtr" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#218c74;color:#218c74">Ranges</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Griffin-Dalby/carrot/blob/main/src/init.luau#L438"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>CarrotCore<!-- -->.</code><code class="green_DgR4">gtr</code><code>(</code><div class="inset_uKQm"><div><code>version<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/carrot/api/VersionApi#ConvertibleVersion">ConvertibleVersion</a></code><code>,</code></div><div><code>range<!-- -->: </code><code class="blue_P4bS">string</code></div></div><code>) → </code><code class="blue_P4bS">boolean</code></div><div>
+<p><a href="https://docs.npmjs.com/cli/v6/using-npm/semver#ranges-1">View this on npm semver docs</a></p>
+<p>Return <code>true</code> if version is <strong>greater than</strong> all the versions possible in the range.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ltr"><code style="text-decoration:none">ltr</code><a href="#ltr" class="hash-link" aria-label="Direct link to ltr" title="Direct link to ltr" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#218c74;color:#218c74">Ranges</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Griffin-Dalby/carrot/blob/main/src/init.luau#L455"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>CarrotCore<!-- -->.</code><code class="green_DgR4">ltr</code><code>(</code><div class="inset_uKQm"><div><code>version<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/carrot/api/VersionApi#ConvertibleVersion">ConvertibleVersion</a></code><code>,</code></div><div><code>range<!-- -->: </code><code class="blue_P4bS">string</code></div></div><code>) → </code><code class="blue_P4bS">boolean</code></div><div>
+<p><a href="https://docs.npmjs.com/cli/v6/using-npm/semver#ranges-1">View this on npm semver docs</a></p>
+<p>return <code>true</code> if version is <strong>less than</strong> all the versions possible in the range.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="outside"><code style="text-decoration:none">outside</code><a href="#outside" class="hash-link" aria-label="Direct link to outside" title="Direct link to outside" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#218c74;color:#218c74">Ranges</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Griffin-Dalby/carrot/blob/main/src/init.luau#L475"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>CarrotCore<!-- -->.</code><code class="green_DgR4">outside</code><code>(</code><div class="inset_uKQm"><div><code>version<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/carrot/api/VersionApi#ConvertibleVersion">ConvertibleVersion</a></code><code>,</code></div><div><code>range<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code></div><div><code>hilo<!-- -->: </code><code class="blue_P4bS">&#x27;</code><code class="op_lSLc">&gt;</code><code class="blue_P4bS">&#x27;</code><code class="op_lSLc"> | </code><code class="blue_P4bS">&#x27;</code><code class="op_lSLc">&lt;</code><code class="blue_P4bS">&#x27;</code></div></div><code>) → </code><code class="blue_P4bS">boolean</code></div><div>
+<p><a href="https://docs.npmjs.com/cli/v6/using-npm/semver#ranges-1">View this on npm semver docs</a></p>
+<p>
+  Return <code>true</code> if the version is <strong>outside</strong> the bounds of the range in
+  either the high or low direction. The <code>hilo</code> argument must be either
+  the string <code>'>'</code> or <code>'&#x3C;'</code>. (This is the function called by <code>gtr</code> and <code>ltr</code>)
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="coerce"><code style="text-decoration:none">coerce</code><a href="#coerce" class="hash-link" aria-label="Direct link to coerce" title="Direct link to coerce" translate="no">​</a></h3><span class="docTag__6UZ" style="border-color:#925FB9;color:#925FB9">Coercion</span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Griffin-Dalby/carrot/blob/main/src/init.luau#L505"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>CarrotCore<!-- -->.</code><code class="green_DgR4">coerce</code><code>(</code><code>version<!-- -->: </code><code class="blue_P4bS">string</code><code>) → </code><code class="blue_P4bS">string</code></div><div>
+<p><a href="https://docs.npmjs.com/cli/v6/using-npm/semver#coercion">View this on npm semver docs</a></p>
+<p>Coerces a string to semver if possible.</p>
+<p>
+  Aims to provide a very forgiving translation of a non-semver string
+  to semver. It looks for the first digit in a string, and consumes
+  all remaining characters which satisfy at least a partial semver, up
+  to the maximum permitted length (256 characters).
+</p>
+<p>
+  Maximum length for any semver component considered for coercion is
+  16 characters; longer components will be ignored (
+  <code>10000000000000000.2.3.4</code> becomes <code>2.3.4</code>).
+</p>
 </div></div></article></div><details><summary>Show raw api</summary><pre style="max-width:100%;white-space:pre-wrap">{
     &quot;functions&quot;: [
         {
-            &quot;name&quot;: &quot;parse&quot;,
-            &quot;desc&quot;: &quot;Parses a version string, and deconstructs it into a format usable\nwith the framework.&quot;,
+            &quot;name&quot;: &quot;valid&quot;,
+            &quot;desc&quot;: &quot;[View this on npm semver docs](https://docs.npmjs.com/cli/v6/using-npm/semver#functions)\n\nReturn the parsed version, or null if it&#x27;s not valid.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;version&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;String&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;string&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;tags&quot;: [
+                &quot;Version&quot;
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 65,
+                &quot;path&quot;: &quot;src/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;inc&quot;,
+            &quot;desc&quot;: &quot;[View this on npm semver docs](https://docs.npmjs.com/cli/v6/using-npm/semver#functions)\n\nReturn the version incremented by the release type (`major`, `minor`, or `patch`), or null if it&#x27;s not valid.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;version&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;string&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;release&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;ReleaseType&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;string&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;tags&quot;: [
+                &quot;Version&quot;
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 82,
+                &quot;path&quot;: &quot;src/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;major&quot;,
+            &quot;desc&quot;: &quot;[View this on npm semver docs](https://docs.npmjs.com/cli/v6/using-npm/semver#functions)\n\nReturn the major version number&quot;,
             &quot;params&quot;: [
                 {
                     &quot;name&quot;: &quot;version&quot;,
@@ -42,18 +207,426 @@ strings."><link data-rh="true" rel="canonical" href="https://Griffin-Dalby.githu
             &quot;returns&quot;: [
                 {
                     &quot;desc&quot;: &quot;&quot;,
-                    &quot;lua_type&quot;: &quot;Version&quot;
+                    &quot;lua_type&quot;: &quot;number&quot;
                 }
             ],
             &quot;function_type&quot;: &quot;static&quot;,
+            &quot;tags&quot;: [
+                &quot;Version&quot;
+            ],
             &quot;source&quot;: {
-                &quot;line&quot;: 60,
+                &quot;line&quot;: 99,
+                &quot;path&quot;: &quot;src/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;minor&quot;,
+            &quot;desc&quot;: &quot;[View this on npm semver docs](https://docs.npmjs.com/cli/v6/using-npm/semver#functions)\n\nReturn the minor version number&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;version&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;string&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;number&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;tags&quot;: [
+                &quot;Version&quot;
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 115,
+                &quot;path&quot;: &quot;src/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;patch&quot;,
+            &quot;desc&quot;: &quot;[View this on npm semver docs](https://docs.npmjs.com/cli/v6/using-npm/semver#functions)\n\nReturn the patch version number&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;version&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;string&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;number&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;tags&quot;: [
+                &quot;Version&quot;
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 131,
+                &quot;path&quot;: &quot;src/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;parse&quot;,
+            &quot;desc&quot;: &quot;[View this on npm semver docs](https://docs.npmjs.com/cli/v6/using-npm/semver#functions)\n\nAttempt to parse a string as a semantic version, returning either a `Version`\nobject, or `null`.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;version&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;string&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;Version?&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;tags&quot;: [
+                &quot;Version&quot;
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 149,
+                &quot;path&quot;: &quot;src/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;gt&quot;,
+            &quot;desc&quot;: &quot;[View this on npm semver docs](https://docs.npmjs.com/cli/v6/using-npm/semver#comparison)\n\nCompares if v1 is **greater than** v2. `(v1 &gt; v2)`&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;v1&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;ConvertibleVersion&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;v2&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;ConvertibleVersion&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;boolean&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;tags&quot;: [
+                &quot;Comparison&quot;
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 171,
+                &quot;path&quot;: &quot;src/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;gte&quot;,
+            &quot;desc&quot;: &quot;[View this on npm semver docs](https://docs.npmjs.com/cli/v6/using-npm/semver#comparison)\n\nCompares if v1 is **greater than or equal to** v2. `(v1 &gt;= v2)`&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;v1&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;ConvertibleVersion&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;v2&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;ConvertibleVersion&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;boolean&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;tags&quot;: [
+                &quot;Comparison&quot;
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 188,
+                &quot;path&quot;: &quot;src/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;lt&quot;,
+            &quot;desc&quot;: &quot;[View this on npm semver docs](https://docs.npmjs.com/cli/v6/using-npm/semver#comparison)\n\nCompares if v1 is **less than** v2. `(v1 &lt; v2)`&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;v1&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;ConvertibleVersion&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;v2&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;ConvertibleVersion&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;boolean&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;tags&quot;: [
+                &quot;Comparison&quot;
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 205,
+                &quot;path&quot;: &quot;src/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;lte&quot;,
+            &quot;desc&quot;: &quot;[View this on npm semver docs](https://docs.npmjs.com/cli/v6/using-npm/semver#comparison)\n\nCompares if v1 is **less than or equal to** v2. `(v1 &lt;= v2)`&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;v1&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;ConvertibleVersion&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;v2&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;ConvertibleVersion&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;boolean&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;tags&quot;: [
+                &quot;Comparison&quot;
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 222,
+                &quot;path&quot;: &quot;src/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;eq&quot;,
+            &quot;desc&quot;: &quot;[View this on npm semver docs](https://docs.npmjs.com/cli/v6/using-npm/semver#comparison)\n\nCompares if v1 is **equal to** v2. `(v1 == v2)`&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;v1&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;ConvertibleVersion&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;v2&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;ConvertibleVersion&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;boolean&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;tags&quot;: [
+                &quot;Comparison&quot;
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 239,
+                &quot;path&quot;: &quot;src/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;neq&quot;,
+            &quot;desc&quot;: &quot;[View this on npm semver docs](https://docs.npmjs.com/cli/v6/using-npm/semver#comparison)\n\nCompares if v1 is **not equal to** v2. `(v1 != v2)`&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;v1&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;ConvertibleVersion&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;v2&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;ConvertibleVersion&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;boolean&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;tags&quot;: [
+                &quot;Comparison&quot;
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 256,
+                &quot;path&quot;: &quot;src/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;cmp&quot;,
+            &quot;desc&quot;: &quot;[View this on npm semver docs](https://docs.npmjs.com/cli/v6/using-npm/semver#comparison)\n\nPass in a comparison string, and it&#x27;ll call the corresponding comparison\nfunction. Throws if an invalid comparison string is provided.&lt;br&gt;\n`\&quot;===\&quot;` and `\&quot;!==\&quot;` do simple string comparison, but are included for completeness.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;v1&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;ConvertibleVersion&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;comp&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;Comparator&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;v2&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;ConvertibleVersion&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;boolean&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;tags&quot;: [
+                &quot;Comparison&quot;
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 276,
+                &quot;path&quot;: &quot;src/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;compare&quot;,
+            &quot;desc&quot;: &quot;[View this on npm semver docs](https://docs.npmjs.com/cli/v6/using-npm/semver#comparison)\n\nReturn `0` if `v1 == v2`, `1` if `v1` is greater, or `-1` if `v2` is greater.\nUnlike a JavaScript Array.sort comparator, this numeric result cannot be passed directly\nto Luau `table.sort()`, whose comparator must return a boolean. Use `lt` as the sort\ncomparator for ascending semantic-version order (for example, `table.sort(versions, lt)`).&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;v1&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;ConvertibleVersion&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;v2&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;ConvertibleVersion&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;number&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;tags&quot;: [
+                &quot;Comparison&quot;
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 296,
+                &quot;path&quot;: &quot;src/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;rcompare&quot;,
+            &quot;desc&quot;: &quot;[View this on npm semver docs](https://docs.npmjs.com/cli/v6/using-npm/semver#comparison)\n\nThe reserse of compare. Comes with the same limitations.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;v1&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;ConvertibleVersion&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;v2&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;ConvertibleVersion&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;number&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;tags&quot;: [
+                &quot;Comparison&quot;
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 313,
+                &quot;path&quot;: &quot;src/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;diff&quot;,
+            &quot;desc&quot;: &quot;[View this on npm semver docs](https://docs.npmjs.com/cli/v6/using-npm/semver#comparison)\n\nReturns difference between two versions by the release type (`major`, `minor`, or `patch`),\nor `null` if the versions are the same.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;v1&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;ConvertibleVersion&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;v2&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;ConvertibleVersion&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;ReleaseType&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;tags&quot;: [
+                &quot;Comparison&quot;
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 331,
+                &quot;path&quot;: &quot;src/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;validRange&quot;,
+            &quot;desc&quot;: &quot;[View this on npm semver docs](https://docs.npmjs.com/cli/v6/using-npm/semver#ranges-1)\n\nReturn the valid range, or null if it&#x27;s not valid.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;range&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;string&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;string&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;tags&quot;: [
+                &quot;Ranges&quot;
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 352,
                 &quot;path&quot;: &quot;src/init.luau&quot;
             }
         },
         {
             &quot;name&quot;: &quot;satisfies&quot;,
-            &quot;desc&quot;: &quot;Checks if a specific version fits a semver range requirement&quot;,
+            &quot;desc&quot;: &quot;[View this on npm semver docs](https://docs.npmjs.com/cli/v6/using-npm/semver#ranges-1)\n\nReturn true if the version satisfies the range.&quot;,
             &quot;params&quot;: [
                 {
                     &quot;name&quot;: &quot;version&quot;,
@@ -61,7 +634,7 @@ strings."><link data-rh="true" rel="canonical" href="https://Griffin-Dalby.githu
                     &quot;lua_type&quot;: &quot;ConvertibleVersion&quot;
                 },
                 {
-                    &quot;name&quot;: &quot;requirement&quot;,
+                    &quot;name&quot;: &quot;range&quot;,
                     &quot;desc&quot;: &quot;&quot;,
                     &quot;lua_type&quot;: &quot;string&quot;
                 }
@@ -73,19 +646,82 @@ strings."><link data-rh="true" rel="canonical" href="https://Griffin-Dalby.githu
                 }
             ],
             &quot;function_type&quot;: &quot;static&quot;,
+            &quot;tags&quot;: [
+                &quot;Ranges&quot;
+            ],
             &quot;source&quot;: {
-                &quot;line&quot;: 74,
+                &quot;line&quot;: 369,
                 &quot;path&quot;: &quot;src/init.luau&quot;
             }
         },
         {
-            &quot;name&quot;: &quot;format&quot;,
-            &quot;desc&quot;: &quot;Reconstructs a Version table back into a semver string&quot;,
+            &quot;name&quot;: &quot;maxSatisfying&quot;,
+            &quot;desc&quot;: &quot;[View this on npm semver docs](https://docs.npmjs.com/cli/v6/using-npm/semver#ranges-1)\n\nReturn the highest version in the list that satisfies the range, or\n`null` if none of them do.&quot;,
             &quot;params&quot;: [
                 {
                     &quot;name&quot;: &quot;version&quot;,
                     &quot;desc&quot;: &quot;&quot;,
-                    &quot;lua_type&quot;: &quot;Version&quot;
+                    &quot;lua_type&quot;: &quot;{ConvertibleVersion}&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;range&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;string&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;string?&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;tags&quot;: [
+                &quot;Ranges&quot;
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 387,
+                &quot;path&quot;: &quot;src/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;minSatisfying&quot;,
+            &quot;desc&quot;: &quot;[View this on npm semver docs](https://docs.npmjs.com/cli/v6/using-npm/semver#ranges-1)\n\nReturn the lowest version in the list that satisfies the range, or\n`null` if none of them do.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;versions&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;{ConvertibleVersion}&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;range&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;string&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;string?&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;tags&quot;: [
+                &quot;Ranges&quot;
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 405,
+                &quot;path&quot;: &quot;src/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;minVersion&quot;,
+            &quot;desc&quot;: &quot;[View this on npm semver docs](https://docs.npmjs.com/cli/v6/using-npm/semver#ranges-1)\n\nReturn the lowest version that can possibly match the given range.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;range&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;string&quot;
                 }
             ],
             &quot;returns&quot;: [
@@ -95,20 +731,162 @@ strings."><link data-rh="true" rel="canonical" href="https://Griffin-Dalby.githu
                 }
             ],
             &quot;function_type&quot;: &quot;static&quot;,
+            &quot;tags&quot;: [
+                &quot;Ranges&quot;
+            ],
             &quot;source&quot;: {
-                &quot;line&quot;: 87,
+                &quot;line&quot;: 421,
+                &quot;path&quot;: &quot;src/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;gtr&quot;,
+            &quot;desc&quot;: &quot;[View this on npm semver docs](https://docs.npmjs.com/cli/v6/using-npm/semver#ranges-1)\n\nReturn `true` if version is **greater than** all the versions possible in the range.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;version&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;ConvertibleVersion&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;range&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;string&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;boolean&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;tags&quot;: [
+                &quot;Ranges&quot;
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 438,
+                &quot;path&quot;: &quot;src/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;ltr&quot;,
+            &quot;desc&quot;: &quot;[View this on npm semver docs](https://docs.npmjs.com/cli/v6/using-npm/semver#ranges-1)\n\nreturn `true` if version is **less than** all the versions possible in the range.&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;version&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;ConvertibleVersion&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;range&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;string&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;boolean&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;tags&quot;: [
+                &quot;Ranges&quot;
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 455,
+                &quot;path&quot;: &quot;src/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;outside&quot;,
+            &quot;desc&quot;: &quot;[View this on npm semver docs](https://docs.npmjs.com/cli/v6/using-npm/semver#ranges-1)\n\nReturn `true` if the version is **outside** the bounds of the range in\neither the high or low direction. The `hilo` argument must be either\nthe string `&#x27;&gt;&#x27;` or `&#x27;&lt;&#x27;`. (This is the function called by `gtr` and `ltr`)&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;version&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;ConvertibleVersion&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;range&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;string&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;hilo&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;&#x27;&gt;&#x27;|&#x27;&lt;&#x27;&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;boolean&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;tags&quot;: [
+                &quot;Ranges&quot;
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 475,
+                &quot;path&quot;: &quot;src/init.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;coerce&quot;,
+            &quot;desc&quot;: &quot;[View this on npm semver docs](https://docs.npmjs.com/cli/v6/using-npm/semver#coercion)\n\nCoerces a string to semver if possible.\n\nAims to provide a very forgiving translation of a non-semver string\nto semver. It looks for the first digit in a string, and consumes\nall remaining characters which satisfy at least a partial semver, up\nto the maximum permitted length (256 characters).\n\nMaximum length for any semver component considered for coercion is\n16 characters; longer components will be ignored (\n`10000000000000000.2.3.4` becomes `2.3.4`).&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;version&quot;,
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;string&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;&quot;,
+                    &quot;lua_type&quot;: &quot;string&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;tags&quot;: [
+                &quot;Coercion&quot;
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 505,
                 &quot;path&quot;: &quot;src/init.luau&quot;
             }
         }
     ],
     &quot;properties&quot;: [],
-    &quot;types&quot;: [],
+    &quot;types&quot;: [
+        {
+            &quot;name&quot;: &quot;ReleaseType&quot;,
+            &quot;desc&quot;: &quot;Defines the specific release types defined within the version string.&quot;,
+            &quot;lua_type&quot;: &quot;\&quot;major\&quot;|\&quot;minor\&quot;|\&quot;patch&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 339,
+                &quot;path&quot;: &quot;src/definitions.luau&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Comparator&quot;,
+            &quot;desc&quot;: &quot;Defines any comparator that can be used in a free comparison function, such\nas `cmp(v1, Compartor, v2)`, and it will call the correlating comparison.\n\n`\&quot;===\&quot;` and `\&quot;!==\&quot;` do simple string comparison, but are included for completeness.&quot;,
+            &quot;lua_type&quot;: &quot;\&quot;&gt;\&quot;|\&quot;&gt;=\&quot;|\&quot;&lt;\&quot;|\&quot;&lt;=\&quot;|\&quot;==\&quot;|\&quot;!=\&quot;&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 350,
+                &quot;path&quot;: &quot;src/definitions.luau&quot;
+            }
+        }
+    ],
     &quot;name&quot;: &quot;CarrotCore&quot;,
     &quot;desc&quot;: &quot;Core module &amp; entry-point for the carrot framework. It aggregates all of the methods needed to read &amp; parse semver \nstrings.&quot;,
     &quot;source&quot;: {
         &quot;line&quot;: 17,
         &quot;path&quot;: &quot;src/definitions.luau&quot;
     }
-}</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#format" class="table-of-contents__link toc-highlight">.format</a></li><li><a href="#parse" class="table-of-contents__link toc-highlight">.parse</a></li><li><a href="#satisfies" class="table-of-contents__link toc-highlight">.satisfies</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Griffin Dalby. Built with Moonwave and Docusaurus</div></div></div></footer></div>
+}</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a><ul><li><a href="#Comparator" class="table-of-contents__link toc-highlight">Comparator</a></li><li><a href="#ReleaseType" class="table-of-contents__link toc-highlight">ReleaseType</a></li></ul></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#cmp" class="table-of-contents__link toc-highlight">.cmp</a></li><li><a href="#coerce" class="table-of-contents__link toc-highlight">.coerce</a></li><li><a href="#compare" class="table-of-contents__link toc-highlight">.compare</a></li><li><a href="#diff" class="table-of-contents__link toc-highlight">.diff</a></li><li><a href="#eq" class="table-of-contents__link toc-highlight">.eq</a></li><li><a href="#gt" class="table-of-contents__link toc-highlight">.gt</a></li><li><a href="#gte" class="table-of-contents__link toc-highlight">.gte</a></li><li><a href="#gtr" class="table-of-contents__link toc-highlight">.gtr</a></li><li><a href="#inc" class="table-of-contents__link toc-highlight">.inc</a></li><li><a href="#lt" class="table-of-contents__link toc-highlight">.lt</a></li><li><a href="#lte" class="table-of-contents__link toc-highlight">.lte</a></li><li><a href="#ltr" class="table-of-contents__link toc-highlight">.ltr</a></li><li><a href="#major" class="table-of-contents__link toc-highlight">.major</a></li><li><a href="#maxSatisfying" class="table-of-contents__link toc-highlight">.maxSatisfying</a></li><li><a href="#minor" class="table-of-contents__link toc-highlight">.minor</a></li><li><a href="#minSatisfying" class="table-of-contents__link toc-highlight">.minSatisfying</a></li><li><a href="#minVersion" class="table-of-contents__link toc-highlight">.minVersion</a></li><li><a href="#neq" class="table-of-contents__link toc-highlight">.neq</a></li><li><a href="#outside" class="table-of-contents__link toc-highlight">.outside</a></li><li><a href="#parse" class="table-of-contents__link toc-highlight">.parse</a></li><li><a href="#patch" class="table-of-contents__link toc-highlight">.patch</a></li><li><a href="#rcompare" class="table-of-contents__link toc-highlight">.rcompare</a></li><li><a href="#satisfies" class="table-of-contents__link toc-highlight">.satisfies</a></li><li><a href="#valid" class="table-of-contents__link toc-highlight">.valid</a></li><li><a href="#validRange" class="table-of-contents__link toc-highlight">.validRange</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Griffin Dalby. Built with Moonwave and Docusaurus</div></div></div></footer></div>
 </body>
 </html>

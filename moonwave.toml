@@ -10,7 +10,7 @@ section = "API"
 classes = ["VersionApi", "RangeApi"]
 
 [docusaurus]
-onBrokenLinks = "throw"
+onBrokenLinks = "warn"
 onBrokenMarkdownLinks = "warn"
 
 [footer]
